@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WebApi_wd92p</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main>
+			<section>
+				<h1>WebApi_wd92p</h1>
+				<nav>
+					<a href="index.html">home</a>
+					<a href="history-api.html">history-api</a>
+					<a class="active" href="geolocation-api.html">geolocation-api</a>
+					<a href="localstorage-api.html">localstorage-api</a>
+				</nav>
+				<hr style="margin: 10px 0px" />
+				<h2>geolocation Api</h2>
+				<button onclick="getLocation();">Show Location My Location</button>
+				<p id="demo"></p>
+			</section>
+		</main>
+		<script>
+			const x = document.getElementById('demo');
+			function getLocation() {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else {
+					x.innerHTML = 'Geolocation is not supported by this browser.';
+				}
+			}
+
+			function showPosition(position) {
+				x.innerHTML = 'Latitude: ' + position.coords.latitude + '<br>Longitude: ' + position.coords.longitude;
+			}
+		</script>
+	</body>
+</html>

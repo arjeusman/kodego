@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>WebApi_wd92p</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main>
+			<section>
+				<h1>WebApi_wd92p</h1>
+				<nav>
+					<a href="index.html">home</a>
+					<a href="history-api.html">history-api</a>
+					<a href="geolocation-api.html">geolocation-api</a>
+					<a class="active" href="localstorage-api.html">localstorage-api</a>
+				</nav>
+				<hr style="margin: 10px 0px" />
+				<h2>localStorage Api</h2>
+                <p>The program below use the <mark>localStorage.getItem()</mark> and <mark>localStorage.setItem()</mark> api.</p>
+				<input id="input" style="padding: 5px" type="text" />
+				<button id="add">Add Item</button>
+				<ul id="list"></ul>
+			</section>
+		</main>
+		<script>
+			let data = JSON.parse(localStorage.getItem('data'));
+			if (data == null) {
+				data = ['Apple', 'Banana', 'Kiwi'];
+			}
+			displayData();
+			function displayData() {
+				let list = document.getElementById('list');
+				list.innerHTML = '';
+				data.forEach(item => {
+					let li = document.createElement('li');
+					li.innerHTML = item;
+					list.appendChild(li);
+				});
+			}
+			document.getElementById('add').addEventListener('click', () => {
+				let input = document.getElementById('input');
+				if (input.value != '') {
+					let li = document.createElement('li');
+					li.innerHTML = input.value;
+					list.appendChild(li);
+					data.push(input.value);
+					displayData();
+					input.value = '';
+					localStorage.setItem('data', JSON.stringify(data));
+				}
+			});
+		</script>
+	</body>
+</html>
