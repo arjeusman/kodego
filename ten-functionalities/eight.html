@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Generate Password</title>
+	</head>
+	<body>
+		<button onclick="history.back()">&laquo; Back</button>
+
+		<h1>Generate Password</h1>
+
+		<form>
+			<input name="password" type="text" placeholder="Enter password" />
+			<button type="button" onclick="password.value = Math.random().toString(36).slice(-10)">Generate</button>
+		</form>
+	</body>
+</html>

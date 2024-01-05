@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title></title>
+	</head>
+	<body>
+		<button onclick="history.back()">&laquo; Back</button>
+
+		<h1>Encode & Decode String (Base64)</h1>
+
+		<form action="">
+			<input type="text" name="text" />
+			<button onclick="text.value = btoa(text.value)" type="button">Encode</button>
+            <button onclick="text.value = atob(text.value)" type="button">Decode</button>
+            <button type="reset" onclick="text.focus()">Clear</button>
+        </form>
+	</body>
+</html>

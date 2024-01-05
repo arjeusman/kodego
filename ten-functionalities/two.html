@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Show/Hide Password</title>
+	</head>
+	<body>
+		<button onclick="history.back()">&laquo; Back</button>
+
+		<h1>Show/Hide Password</h1>
+
+		<form>
+			<label for="username">Username</label>
+			<br />
+			<input id="username" name="username" type="text" />
+			<br />
+			<br />
+			<label for="password">Password</label>
+			<br />
+			<input id="password" name="password" type="password" />
+			<button
+				name="button"
+				onclick="
+                if(password.type=='password'){
+                    password.type='text'
+                    button.innerHTML = 'Hide'
+                } else {
+                    password.type='password'
+                    button.innerHTML = 'Show'
+                }
+            "
+				type="button">
+				Show
+			</button>
+			<br />
+			<br />
+			<button type="button">Login</button>
+		</form>
+	</body>
+</html>

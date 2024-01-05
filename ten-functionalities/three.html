@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Simple Calculator</title>
+	</head>
+	<body>
+		<button onclick="history.back()">&laquo; Back</button>
+
+		<h1>Simple Calculator</h1>
+
+		<form>
+			<input type="text" name="display" />
+
+			<div>
+				<input type="button" onclick="display.value=''" value="C" />
+				<input type="button" onclick="display.value=display.value.slice(0, -1)" value="D" />
+				<input type="button" onclick="display.value+=this.value" value="%" />
+				<input type="button" onclick="display.value+=this.value" value="/" />
+
+				<input type="button" onclick="display.value+=this.value" value="9" />
+				<input type="button" onclick="display.value+=this.value" value="8" />
+				<input type="button" onclick="display.value+=this.value" value="7" />
+				<input type="button" onclick="display.value+=this.value" value="*" />
+
+				<input type="button" onclick="display.value+=this.value" value="6" />
+				<input type="button" onclick="display.value+=this.value" value="5" />
+				<input type="button" onclick="display.value+=this.value" value="4" />
+				<input type="button" onclick="display.value+=this.value" value="-" />
+
+				<input type="button" onclick="display.value+=this.value" value="3" />
+				<input type="button" onclick="display.value+=this.value" value="2" />
+				<input type="button" onclick="display.value+=this.value" value="1" />
+				<input type="button" onclick="display.value+=this.value" value="+" />
+
+				<input type="button" onclick="display.value+=this.value" value="00" />
+				<input type="button" onclick="display.value+=this.value" value="0" />
+				<input type="button" onclick="display.value+=this.value" value="." />
+				<input type="button" onclick="display.value=eval(display.value)" value="=" />
+			</div>
+		</form>
+
+		<style>
+            form input[type="text"]{
+                font-size: 20px;
+                max-width: 200px;
+                padding: 10px 0px;
+                border: none;
+                text-align: right;
+                background-color: #dedede;
+            }
+            form div {
+                width: 200px;
+                display: flex;
+                flex-flow: row;
+                flex-wrap: wrap;
+            }
+			form input[type='button'] {
+				width: 50px;
+				height: 50px;
+                border: none;
+			}
+		</style>
+	</body>
+</html>

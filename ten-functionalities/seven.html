@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Top-Down Left-Right</title>
+	</head>
+	<body>
+		<button onclick="history.back()">&laquo; Back</button>
+
+		<h1>Top-Down Left-Right</h1>
+		<mark>Use the button below to control the box.</mark>
+		<br>
+		<br>
+		<div id="bigbox">
+			<div id="smallbox"></div>
+		</div>
+		<br>
+		<button class="button" onclick="moveLeft()">&leftarrow;</button>
+		<button class="button" onclick="moveRight()">&rightarrow;</button>
+		<button class="button" onclick="moveUp()">&uparrow;</button>
+		<button class="button" onclick="moveDown()">&downarrow;</button>
+		<style>
+			#bigbox {
+				position: relative;
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000;
+			}
+			#smallbox {
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				background-color: red;
+			}
+			.button {
+				width: 40px;
+				height: 40px;
+				font-weight: 800;
+				font-size: 20px;
+			}
+		</style>
+		<script>
+			let box = document.getElementById('smallbox');
+			let x = 0,
+				y = 0;
+			box.style.top = y;
+			box.style.left = 0;
+			function moveLeft() {
+				if (x > 0) {
+					x -= 5;
+					box.style.left = x + 'px';
+				}
+			}
+			function moveRight() {
+				if (x < 175) {
+					x += 5;
+					box.style.left = x + 'px';
+				}
+			}
+			function moveUp() {
+				if (y > 0) {
+					y -= 5;
+					box.style.top = y + 'px';
+				}
+			}
+			function moveDown() {
+				if (y < 175) {
+					y += 5;
+					box.style.top = y + 'px';
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Simple Clock</title>
+	</head>
+	<body>
+		<button onclick="history.back()">&laquo; Back</button>
+
+		<h1>Simple Clock</h1>
+
+		<div>
+			<span id="hours"></span>
+			<span>:</span>
+			<span id="minutes"></span>
+			<span>:</span>
+			<span id="seconds"></span>
+		</div>
+        <style>
+            div {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 50px;
+            }
+            #hours, #minutes, #seconds {
+                border: 1px solid #ddd;
+                padding: 5px;
+                border-radius: 5px;
+            }
+        </style>
+		<script>
+			function setDate() {
+				const now = new Date();
+				const seconds = now.getSeconds();
+				const mins = now.getMinutes();
+				const hour = now.getHours();
+				document.getElementById('hours').innerHTML = (hour % 12 || 12).toString().padStart(2, '0') + '<small>H</small>';
+				document.getElementById('minutes').innerHTML = mins.toString().padStart(2, '0') + '<small>M</small>';
+				document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0') + '<small>S</small>';
+			}
+
+			setInterval(setDate, 1000);
+
+			setDate();
+		</script>
+	</body>
+</html>
